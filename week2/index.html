@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My First Web Page</title>
+    <script>
+      function hello() {
+        alert("i love you! (●ˇ∀ˇ●) so much");
+        console.log("love message sent.");
+      }
+    </script>
+  </head>
+  <body>
+    <h1 id="title">Seohyun's First Web Page</h1>
+    <p>↓If you click this button, I'll give you my secret message.</p>
+    <button onClick="hello()">Click Me!🌞</button>
+    <br />
+    <br />
+    <input type="text" id="nameInput" />
+    <button onclick="getFortune()">운세 보기</button>
+    <script>
+      function getFortune() {
+        const name = document.getElementById("nameInput").value;
+        const fortuneOutput = document.getElementById("fortuneOutput");
+
+        const fortunes = [
+          `${name}님은 오늘 대박날 가능성이 높습니다.`,
+          `${name}님은 오늘 운수가 비교적 좋은 편입니다.`,
+          //`${name}님은 오늘 보통의 하루가 될 것으로 예상됩니다.`,
+          `${name}님은 오늘 유의미한 변화가 일어날 것입니다.`,
+          `${name}님은 오늘 행운이 따를 것입니다.`,
+          `${name}님은 오늘 성공적인 하루를 보낼 수 있을 것입니다.`,
+          `${name}님은 오늘 긍정적인 에너지가 넘칩니다.`,
+          "꽝!",
+        ];
+
+        const randomIndex = Math.floor(Math.random() * fortunes.length);
+        const fortune = fortunes[randomIndex];
+
+        fortuneOutput.textContent += "\n" + fortune + "\n";
+        console.log(fortune);
+      }
+    </script>
+    <pre id="fortuneOutput"></pre>
+  </body>
+</html>
