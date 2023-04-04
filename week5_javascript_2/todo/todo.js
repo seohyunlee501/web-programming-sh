@@ -13,7 +13,7 @@ const todoList = {
   remove(item) {
     const index = this.items.indexOf(item);
     if (index !== -1) {
-      this.items.splixe(index, 1);
+      this.items.splice(index, 1);
       this.save();
     }
   },
